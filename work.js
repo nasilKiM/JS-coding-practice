@@ -7,9 +7,24 @@
 */
 
 // 추천하는 페이지 로딩 시 함수 불러오는 법
-window.addEventListener('DOMContentLoaded', function() {
-    const idDom = document.getElementById('display');
-    idDom.innerText = '글씨가 변경되었습니다';
-    idDom.style.color = 'red';
-    // console.log(idDom);
+// window.addEventListener('DOMContentLoaded', function() {
+//     const idDom = document.getElementById('display');
+//     idDom.innerText = '글씨가 변경되었습니다';
+//     idDom.style.color = 'red';
+//     // console.log(idDom);
+// });
+
+// 2번.탭을 선택하면 선택한 탭의 배경과 글자의색이 바뀌도록 하시오
+
+const tabHost = document.getElementsByClassName(".tab");
+console.log(tabHost);
+
+tabHost.addEventListener('click',(e)=>{
+    tabHost.style.background = 'yellow';
+    tabHost.style.color = 'red';
 });
+
+// 왜 onclick이 아니고 addEventListener를 써야하는가?
+// onclick은 이벤트를 여러개 적용하는 것이 불가능하다.
+// addEventListener는 HTML 요소 뿐 아니라 DOM 요소에 대해 동작한다.
+// 캡쳐링,버블링과 같은 이벤트리스너에 대한 옵션 지정가능 -> 세밀한 제어가능
