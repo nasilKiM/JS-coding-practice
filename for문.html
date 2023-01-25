@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <!--1. for문 기본-->>
     <!-- for ([초기시작카운트]; [반복조건]; [증감조건]) -->
     <script>
-        기본for배열 = ["a", "b", "c", "d"];
-        for (i = 0; i < 기본for배열.length; i++) {
-            console.log(기본for배열[i]);
-        } // 조건에 부합하는 인덱스를 기준으로 배열 객체에 인덱스로 접근하여 값을 가져오는 구조입니다.
+      기본for배열 = ["a", "b", "c", "d"];
+      for (i = 0; i < 기본for배열.length; i++) {
+        console.log(기본for배열[i]);
+      } // 조건에 부합하는 인덱스를 기준으로 배열 객체의 인덱스로 접근하여 값을 가져오는 구조입니다.
     </script>
-    
+
     <!------------------------------------------------------------------>
     <!-- 2. foreach 반복문 -->
     <!-- foreach 문은 배열 객체의 반복 형태로써, 배열에서 주로 사용되는 반복문
@@ -23,19 +23,15 @@
     반복하며 처리하는 로직은, 인자로 받게되는 <콜백 함수>를 통해 처리합니다. -->
 
     <script>
-        기본foreach배열 = ["a", 2, false, "d"];
-        기본foreach배열.forEach((elem) => {
-            console.log(elem);
-        });
-        //각 항목을 반복하며 foreach 결과를 확인할 수 있음.
-        // a, 2, false, d
-
+      기본foreach배열 = ["a", 2, false, "d"];
+      기본foreach배열.forEach((elem) => {
+        console.log(elem);
+      });
+      //각 항목을 반복하며 foreach 결과를 확인할 수 있음.
+      // a, 2, false, d
     </script>
 
-
-
-
-<!-- ***정리하기***
+    <!-- ***정리하기***
 
 종류            Array(배열)     String(문자열)      Object(객체)       HTML콜렉션    Node List     참고
 ----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -43,6 +39,5 @@ for each            O               X                   X                 X     
 for...in            O               O                   O                 X              X         속성(키값)을 순환. index 배열순회 추천x
 for...of            O               O                   X                 X              O         속성 값 순환
 for                 O               O                   X                 O              O         .lenth 만큼 반복                     -->
-
-</body>
+  </body>
 </html>
