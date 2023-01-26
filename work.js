@@ -7,12 +7,12 @@
 */
 
 // 추천하는 페이지 로딩 시 함수 불러오는 법
-// window.addEventListener('DOMContentLoaded', function() {
-//     const idDom = document.getElementById('display');
-//     idDom.innerText = '글씨가 변경되었습니다';
-//     idDom.style.color = 'red';
-//     // console.log(idDom);
-// });
+window.addEventListener("DOMContentLoaded", function () {
+  const idDom = document.getElementById("display");
+  idDom.innerText = "글씨가 변경되었습니다";
+  idDom.style.color = "red";
+  // console.log(idDom);
+});
 
 // 2번.탭을 선택하면 선택한 탭의 배경과 글자의색이 바뀌도록 하시오
 
