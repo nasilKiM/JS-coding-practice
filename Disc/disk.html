@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DISK</title>
+    <link rel="stylesheet" href="./reset.css" />
+  </head>
+  <style>
+    main {
+      width: 100%;
+      height: 100vh;
+      background: linear-gradient(120deg, #0272a4, #f6a564);
+      transition: background 0.5s;
+      background-repeat: no-repeat;
+      /* background-image: url("./assets/iu_0.jpg"); */
+      background-size: cover;
+    }
+
+    .disk {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 392px;
+      height: 392px;
+      border-radius: 50%;
+      background: linear-gradient(120deg, #000, #333333, #000);
+      box-shadow: 4px 14px 40px rgba(0, 0, 0, 0.3);
+      transition: left 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      z-index: 1000;
+    }
+
+    .disk_inner {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 160px;
+      height: 160px;
+      background-color: #0272a4;
+      border-radius: 50%;
+      border: 3px dashed rgba(43, 26, 26, 0.4);
+    }
+
+    .play_btn_group {
+      position: absolute;
+      bottom: 10%;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1000;
+    }
+
+    .play_btn_group > button {
+      background-color: #000;
+      color: #fff;
+      padding: 16px 32px;
+      margin: 16px;
+    }
+
+    .play_btn_group > button:hover {
+      background-color: #fff;
+      color: #000;
+    }
+
+    .list_btn_group {
+      position: absolute;
+      top: 20%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .list_btn_group > button {
+      background-color: transparent;
+      color: #d9d9d9;
+      transition: transform 0.3s;
+    }
+
+    .list_btn_group > button:hover {
+      transform: scale(1.2);
+    }
+
+    .list_btn_group ul {
+      width: 392px;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .list_btn_group ul img {
+      width: 64px;
+      height: 64px;
+      margin: 0 1rem;
+    }
+
+    .play {
+      border: 1px solid #fff;
+      transform: scale(1.2);
+    }
+
+    .active {
+      animation: rotateAni 2s linear infinite;
+    }
+
+    .filter {
+      position: absolute;
+      z-index: 999;
+      width: 100%;
+      height: 100vh;
+      backdrop-filter: blur(8px);
+    }
+
+    @keyframes rotateAni {
+      0% {
+        transform: translate(-50%, -50%) rotate(0);
+      }
+      100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+      }
+    }
+  </style>
+  <body>
+    <audio controls>
+      <source src="./assets/music/01_iu.mp3" />
+    </audio>
+    <div class="filter"></div>
+    <main id="main">
+      <section>
+        <div class="disk">
+          <div class="disk_inner"></div>
+        </div>
+        <div class="list_btn_group">
+          <button class="btns">&lt;</button>
+          <ul id="ls"></ul>
+          <button class="btns">&gt;</button>
+        </div>
+      </section>
+      <div class="play_btn_group">
+        <button>P L A Y</button>
+        <button>S T O P</button>
+      </div>
+    </main>
+  </body>
+  <script src="./disk.js"></script>
+</html>
