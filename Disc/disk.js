@@ -93,8 +93,12 @@ const musicPlayBtn = document.querySelectorAll(".play_btn_group > button");
 musicPlayBtn[0].addEventListener("click", () => {
   diskPlay();
 });
-//중지버튼
+//멈춤버튼
 musicPlayBtn[1].addEventListener("click", () => {
+  diskPause();
+});
+//중지버튼
+musicPlayBtn[2].addEventListener("click", () => {
   diskStop();
 });
 
@@ -103,6 +107,13 @@ function diskPlay() {
   musicPlay.play();
   const diskDiv = document.querySelector(".disk");
   diskDiv.classList.add("active"); // 클래스에 active 추가해주기.. classList!
+}
+
+//음악 pause 버튼 눌렀을 때, disk 정지
+function diskPause() {
+  musicPlay.pause();
+  const diskDiv = document.querySelector(".disk");
+  diskDiv.classList.remove("active");
 }
 
 //음악 stop 버튼 눌렀을 때, disk 정지
@@ -121,13 +132,19 @@ buttons[0].addEventListener("click", () => {
   // 현재 재생하는 노래 -1 인덱스번호의 노래를 가져온다.
   if (currentMusicIndex > 0) {
     setMusic(currentMusicIndex - 1);
+  } else {
+    currentMusicIndex = musicListData.length - 1;
+    setMusic(currentMusicIndex);
   }
 });
 
 // > 화살표
 buttons[1].addEventListener("click", () => {
   // 현재 재생하는 노래 +1 인덱스번호의 노래를 가져온다.
-  if (currentMusicIndex < 2) {
+  if (currentMusicIndex < musicListData.length) {
     setMusic(currentMusicIndex + 1);
+  } else {
+    currentMusicIndex = 0;
+    setMusic(currentMusicIndex);
   }
 });
