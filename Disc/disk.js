@@ -77,7 +77,7 @@ function setMusic(musicIndex) {
   const musicSource = musicPlay.querySelector("source");
   musicSource.setAttribute("src", musicListData[musicIndex].musicSrc);
   musicPlay.load();
-  diskPlay();
+  // diskPlay();
   //앨범아트에 테두리 + 크기키우기
   const imgBorder = document.querySelectorAll("ul>li>img");
   for (let j = 0; j < imgBorder.length; j++) {
@@ -132,9 +132,11 @@ buttons[0].addEventListener("click", () => {
   // 현재 재생하는 노래 -1 인덱스번호의 노래를 가져온다.
   if (currentMusicIndex > 0) {
     setMusic(currentMusicIndex - 1);
+    diskStop();
   } else {
     currentMusicIndex = musicListData.length - 1;
     setMusic(currentMusicIndex);
+    diskStop();
   }
 });
 
@@ -143,8 +145,10 @@ buttons[1].addEventListener("click", () => {
   // 현재 재생하는 노래 +1 인덱스번호의 노래를 가져온다.
   if (currentMusicIndex < musicListData.length) {
     setMusic(currentMusicIndex + 1);
+    diskStop();
   } else {
     currentMusicIndex = 0;
     setMusic(currentMusicIndex);
+    diskStop();
   }
 });
